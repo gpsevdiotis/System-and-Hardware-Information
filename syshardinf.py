@@ -4,6 +4,7 @@ import sys
 import os
 
 def main():
+    
     print("\n\nHow would you like to view your specs?\n\n1. TXT \n2. Terminal\n")
     option = input()
     if option == "1":
@@ -42,9 +43,9 @@ def prints():
     print(f"Current CPU utilization: {psutil.cpu_percent(interval=1)}")
     print(f"Current per-CPU utilization: {psutil.cpu_percent(interval=1, percpu=True)}")
     print()
-    print(f"Total RAM installed: {round(psutil.virtual_memory().total/1000000000, 2)} GB")
-    print(f"Available RAM: {round(psutil.virtual_memory().available/1000000000, 2)} GB")
-    print(f"Used RAM: {round(psutil.virtual_memory().used/1000000000, 2)} GB")
+    print(f"Total RAM installed: {round(psutil.virtual_memory().total/1000000000)-1} GB")
+    print(f"Available RAM: {round(psutil.virtual_memory().available/1000000000)-1} GB")
+    print(f"Used RAM: {round(psutil.virtual_memory().used/1000000000)} GB")
     print(f"RAM usage: {psutil.virtual_memory().percent}%")
 
 clear = lambda: os.system('cls')
